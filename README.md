@@ -29,7 +29,7 @@ The AI chat doesn't hallucinate numbers — it translates your question into a s
 | Database | MongoDB, Mongoose |
 | Auth | JWT (Access + Refresh token pattern) |
 | AI | Claude API (Anthropic) — tool/function calling |
-| Deployment | EC2 (backend), S3 static hosting (frontend) |
+| Deployment | Render (backend), Cloudflare (frontend) |
 | Architecture | REST API, MVC pattern, Mobile-first PWA |
 
 ---
@@ -38,19 +38,19 @@ The AI chat doesn't hallucinate numbers — it translates your question into a s
 
 ```
 ┌─────────────────────────────────────────────────────┐
-│                     Frontend (React)                 │
-│   Redux Store → Axios interceptor → JWT attachment   │
+│                     Frontend (React)                │
+│   Redux Store → Axios interceptor → JWT attachment  │
 └──────────────────────┬──────────────────────────────┘
                        │ REST API
 ┌──────────────────────▼──────────────────────────────┐
-│                  Backend (Express)                   │
-│                                                      │
-│  Auth routes    Transaction routes    AI routes      │
-│       │               │                  │           │
-│  JWT middleware  MongoDB aggregations  Claude API    │
-│       │               │                  │           │
+│                  Backend (Express)                  │
+│                                                     │
+│  Auth routes    Transaction routes    AI routes     │
+│       │               │                  │          │
+│  JWT middleware  MongoDB aggregations  Claude API   │
+│       │               │                  │          │
 │       └───────────────▼──────────────────┘          │
-│                   MongoDB (Atlas)                    │
+│                   MongoDB (Atlas)                   │
 └─────────────────────────────────────────────────────┘
 ```
 
