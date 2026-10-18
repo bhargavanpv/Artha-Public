@@ -148,13 +148,13 @@ PORT=5000
 
 | Service | Platform |
 |---|---|
-| Backend (Node/Express) | AWS EC2 (t2.micro) + PM2 |
-| Frontend (React build) | AWS S3 static hosting |
+| Backend (Node/Express) | Render|
+| Frontend (React build) | Cloudflare Pages |
 | Database | MongoDB Atlas |
 | Domain | getarthaai.com |
 
-The frontend React build is served from S3 with public read access. The backend runs on EC2 managed by PM2 for process persistence. Both talk over REST. No Docker or orchestration — intentionally kept lean for a solo-deployed portfolio project.
-
+The frontend React build is served from Cloudflare with public read access. The backend runs on Render. Both talk over REST. No Docker or orchestration — intentionally kept lean for a solo-deployed portfolio project.
+Looking forward to develop the application incrementally.
 ---
 
 ## What I'd add with more time
@@ -164,6 +164,7 @@ The frontend React build is served from S3 with public read access. The backend 
 - Redis caching layer for frequent aggregation queries
 - Refresh token rotation with Redis blacklist
 - Rate limiting on AI chat endpoint
+- High level encryption with guidance of a Senior SWE 
 
 ---
 
