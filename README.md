@@ -28,7 +28,7 @@ The AI chat doesn't hallucinate numbers — it translates your question into a s
 | Backend | Node.js, Express.js |
 | Database | MongoDB, Mongoose |
 | Auth | JWT (Access + Refresh token pattern) |
-| AI | Claude API (Anthropic) — tool/function calling |
+| AI | ChatGPT API — tool/function calling |
 | Deployment | Render (backend), Cloudflare (frontend) |
 | Architecture | REST API, MVC pattern, Mobile-first PWA |
 
@@ -47,7 +47,7 @@ The AI chat doesn't hallucinate numbers — it translates your question into a s
 │                                                     │
 │  Auth routes    Transaction routes    AI routes     │
 │       │               │                  │          │
-│  JWT middleware  MongoDB aggregations  Claude API   │
+│  JWT middleware  MongoDB aggregations  ChatGPT API  │
 │       │               │                  │          │
 │       └───────────────▼──────────────────┘          │
 │                   MongoDB (Atlas)                   │
@@ -73,7 +73,7 @@ The AI chat doesn't hallucinate numbers — it translates your question into a s
 
 **AI Chat**
 - Natural language interface for querying your own financial data
-- Powered by Claude API with tool/function calling
+- Powered by ChatGPT API with tool/function calling
 - Structured query generation — LLM outputs a function call, backend executes it, result is explained in plain English
 - Prevents hallucination by grounding every response in live DB data
 
